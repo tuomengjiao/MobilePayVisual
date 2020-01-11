@@ -14,8 +14,8 @@ def init_all_csv_files(app, global_var):
     file_name: root_path 下每一个文件的名字, 比如 "seven_days_remain_user_2020_01_11_17_48_pm.csv"
     """
 
-    csv_path = os.path.abspath(global_var["today_csv_path"])
-    csv_file_name_list = global_var["today_csv_file_name_list"]
+    csv_path = os.path.abspath(global_var["csv_path"])
+    csv_file_name_list = global_var["csv_file_name_list"]
     today_time_str = datetime.now().strftime("%Y_%m_%d")
 
     # 从 data/raw_csv/ 中读取当天的9个csv, 并且加载到 global_var
