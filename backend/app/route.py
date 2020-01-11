@@ -1,5 +1,5 @@
 from app.init_global import global_var
-from model_route_config import route_init_func
+from model_route_config import route_init_func_dict
 
 
 models = global_var['models']
@@ -16,7 +16,7 @@ def init_route(api, api_version):
     """
 
     for model in models:
-        func = route_init_func.get(model, None)
+        func = route_init_func_dict.get(model, None)
         if func is None:
             print('failed to get model function')
             continue

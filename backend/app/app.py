@@ -1,6 +1,4 @@
 import os
-import sys
-sys.path.insert(0, "/users/hk/dev/MobilePayVisual/backend")
 from flask import Flask
 from flask_restful import Api
 from app.init_global import init_global_func
