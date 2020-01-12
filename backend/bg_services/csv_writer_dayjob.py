@@ -108,6 +108,7 @@ class CsvWriter(object):
 
     def merge(self):
         """
+        该函数 - 把self.raw_df 的csv, merge到 self.merged_csv
         1. master_csv_file: 基准 df, 即 transaction_by_day.csv
 
         2. df.merge 的使用方法:
@@ -131,7 +132,7 @@ class CsvWriter(object):
 
         return
 
-    def write(self):
+    def write_merged_csv_to_db(self):
         """
         将 self.merged_csv 中的2个df, 写入数据表
         1 将 self.merged_csv["daily_transaction_report"] 写入 daily_transaction_report 表;
@@ -168,7 +169,7 @@ def main():
     csv_writer = CsvWriter()
     csv_writer.read_all_csv_files()
     csv_writer.merge()
-    csv_writer.write()
+    csv_writer.write_merged_csv_to_db()
 
 
 if __name__ == '__main__':
