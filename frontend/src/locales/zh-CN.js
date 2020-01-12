@@ -74,15 +74,8 @@ export default {
   // -------- op data -------- start
   'menu.home': '首页',
   'menu.welcome': '平台首页',
-  'menu.notification': '通知',
-  'menu.admin': '权限管理',
-  'menu.admin.user-list': '用户列表',
-  'menu.common': '公共数据',
-  'menu.common.risk-comment-list': '风险评价',
-  'menu.common.city-list': '城市管理',
-  'menu.common.weather-list': '天气数据',
-  'menu.common.pm-list': '空气质量',
-  'menu.common.notification': '查看通知',
+  'menu.transaction': '交易情况',
+  'menu.transaction.daily-report': '每日报告',
   // -------- op data -------- end
 
   'menu.dashboard': 'Dashboard',
