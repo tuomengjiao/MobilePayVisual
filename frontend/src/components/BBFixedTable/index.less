@@ -1,0 +1,76 @@
+.bbSplitCell {
+    margin-top: -6px;
+}
+.indexCell {
+    width: 100%;
+    background: #fafafa;
+    text-align: center;
+}
+.bbTableFooter {
+    margin-top: 24px;
+    float: right;
+}
+.columnSorter {
+    position: relative;
+    margin-left: 8px;
+    display: inline-block;
+    width: 14px;
+    height: 18px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: normal;
+}
+.columnSorterDown {
+    line-height: 6px;
+    display: block;
+    width: 14px;
+    height: 6px;
+    cursor: pointer;
+    position: relative;
+    font-size: 6px;
+}
+.columnSorterUp {
+    line-height: 6px;
+    display: block;
+    width: 14px;
+    height: 6px;
+    cursor: pointer;
+    position: relative;
+    font-size: 6px;
+}
+:global {
+    :focus {
+        outline: none;
+    }
+    .public_fixedDataTable_bodyRow {
+        .fixedDataTableCellGroupLayout_cellGroup {
+            .public_fixedDataTableCell_main {
+                font-size: 12px;
+                background: #fff;
+            }
+        }
+    }
+    .public_fixedDataTableRow_main {
+        border-bottom: 1px solid #d3d3d3;
+        background: #fff;
+    }
+    .public_fixedDataTableCell_cellContent {
+        padding: 6px;
+    }
+    .public_fixedDataTable_header {
+        background-color: #fafafa;
+        .public_fixedDataTableCell_main {
+            background-color: #fafafa;
+            background-image: none;
+            .bbicon {
+                font-weight: normal;
+            }
+        }
+    }
+    .sorterOn {
+        color: #1890ff;
+    }
+    .sorterOff {
+        color: rgba(0, 0, 0, 0.45);
+    }
+}
