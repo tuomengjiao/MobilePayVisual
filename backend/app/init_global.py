@@ -13,10 +13,6 @@ def init_global_func(app):
     global_var['service'] = app.config['SERVICE_NAME']
     global_var['models'] = app.config['MODELS'].split(',')
 
-    # csv 相关的变量
-    global_var["csv_path"] = app.config["CSV_PATH"]
-    global_var["csv_file_name_list"] = app.config["CSV_FILE_NAME_LIST"]
-
     # 把所需的初始化函数加入到 init_func_list 中
     init_func_list = list()
     # 1 先放入 init_db

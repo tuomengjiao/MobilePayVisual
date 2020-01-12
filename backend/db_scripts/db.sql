@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS `mobile_pay_visual`;
-CREATE TABLE `mobile_pay_visual` (
+DROP TABLE IF EXISTS `daily_transaction_report`;
+CREATE TABLE `daily_transaction_report` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(256) NOT NULL DEFAULT '' COMMENT '交易类型',
   `level_1_pv` int(11) NOT NULL DEFAULT 0 COMMENT '一级访问次数pv',
@@ -23,7 +23,22 @@ CREATE TABLE `mobile_pay_visual` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL DEFAULT 0,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_by` int(11) NOT NULL DEFAULT 1,
+  `updated_by` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_uni` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+DROP TABLE IF EXISTS `daily_user`;
+CREATE TABLE `daily_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `part_dt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT "当日日期partition_date",
+  `new_user` int(11) NOT NULL DEFAULT 0 COMMENT "当日新增用户",
+  `active_user` int(11) NOT NULL DEFAULT 0 COMMENT "当日活跃用户",
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL DEFAULT 0,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_by` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_uni` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

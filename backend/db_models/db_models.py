@@ -5,8 +5,8 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-class User(Base):
-    __tablename__ = 'mobile_pay_visual'
+class DailyTransactionReport(Base):
+    __tablename__ = 'daily_transaction_report'
     id = Column(Integer, autoincrement=True, primary_key=True)
     type = Column(String(256), nullable=False, comment="交易类型")
 
@@ -28,6 +28,19 @@ class User(Base):
     last_month_remain_user_count = Column(Integer, nullable=False, comment="上个月留存用户数量")
 
     part_dt = Column(DateTime, nullable=False, default=datetime.now)
+
+    created_at = Column(DateTime, nullable=False, default=datetime.now)
+    created_by = Column(Integer, nullable=False, default=0)
+    updated_at = Column(DateTime, nullable=False, default=datetime.now, onupdate=datetime.now)
+    updated_by = Column(Integer, nullable=False, default=0)
+
+
+class DailyUser(Base):
+    __tablename__ = "daily_user"
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    part_dt = Column(DateTime, nullable=False, default=datetime.now)
+    new_user = Column(Integer, nullable=False, comment="当日新增用户数量")
+    active_user = Column(Integer, nullable=False, comment="当日活跃用户数量")
 
     created_at = Column(DateTime, nullable=False, default=datetime.now)
     created_by = Column(Integer, nullable=False, default=0)
