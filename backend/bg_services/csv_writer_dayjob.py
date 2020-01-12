@@ -69,11 +69,10 @@ class CsvWriter(object):
     def _is_datetime_col(input_str):
         """
         输入 1/11/2020 > 返回True
-        输入其他 > 返回 False
+        输入 其他 > 返回 False
+        TODO
         """
-        res = re.match("[\d]+/[\d]+/[\d]+", input_str)
-        print(res)
-        return res
+        return
 
     def read_all_csv_files(self):
         """
